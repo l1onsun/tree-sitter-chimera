@@ -19,7 +19,7 @@ const expression_fn = ($) =>
   );
 
 module.exports = grammar({
-  name: "walktime",
+  name: "chimera",
 
   rules: {
     source_file: ($) => expression_fn($),
