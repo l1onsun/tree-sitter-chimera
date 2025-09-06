@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-chimera"
 description = "Chimera grammar for tree-sitter"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Ilya Cherezov <ilya@cherezov.xyz>"]
 license = "MIT"
 readme = "README.md"

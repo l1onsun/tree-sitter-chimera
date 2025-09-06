@@ -1,44 +1,5 @@
 [
   {
-    "type": "at_operator",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "binnary_expression",
-          "named": true
-        },
-        {
-          "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_call_list",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "list_pattern",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "binnary_expression",
     "named": true,
     "fields": {},
@@ -46,10 +7,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "at_operator",
-          "named": true
-        },
         {
           "type": "binnary_expression",
           "named": true
@@ -331,6 +288,10 @@
   },
   {
     "type": "+",
+    "named": false
+  },
+  {
+    "type": ",",
     "named": false
   },
   {

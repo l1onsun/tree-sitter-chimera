@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-chimera
 HOMEPAGE_URL := https://github.com/tree-sitter/tree-sitter-chimera
-VERSION := 0.1.0
+VERSION := 0.1.1
 
 # repository
 SRC_DIR := src

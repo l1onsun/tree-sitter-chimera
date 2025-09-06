@@ -49,3 +49,4 @@ zig-out/
 # Direnv
 .direnv/
 .envrc
+.helix/

@@ -85,7 +85,7 @@
       ]
     },
     "function_call": {
-      "type": "PREC",
+      "type": "PREC_LEFT",
       "value": 5,
       "content": {
         "type": "SEQ",
@@ -168,7 +168,7 @@
       }
     },
     "function_call_list": {
-      "type": "PREC",
+      "type": "PREC_LEFT",
       "value": 5,
       "content": {
         "type": "SEQ",
@@ -257,85 +257,6 @@
       "type": "PATTERN",
       "value": "[a-zA-Z_][a-zA-Z0-9_]*"
     },
-    "expression": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "binnary_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unary_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "const_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_call"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_call_list"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "list_pattern"
-        }
-      ]
-    },
-    "at_operator": {
-      "type": "PREC",
-      "value": 6,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "@"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "binnary_expression"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "unary_expression"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "const_value"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "function_call"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "function_call_list"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "list_pattern"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "binnary_expression": {
       "type": "CHOICE",
       "members": [
@@ -386,85 +307,6 @@
                     "value": "="
                   }
                 ]
-              },
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "identifier"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "binnary_expression"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "unary_expression"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "const_value"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "function_call"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "function_call_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "list_pattern"
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        {
-          "type": "PREC_LEFT",
-          "value": 1,
-          "content": {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "identifier"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "binnary_expression"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "unary_expression"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "const_value"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "function_call"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "function_call_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "list_pattern"
-                  }
-                ]
-              },
-              {
-                "type": "SYMBOL",
-                "name": "at_operator"
               },
               {
                 "type": "CHOICE",
@@ -968,7 +810,7 @@
       ]
     },
     "unary_expression": {
-      "type": "PREC",
+      "type": "PREC_LEFT",
       "value": 8,
       "content": {
         "type": "SEQ",
@@ -976,6 +818,10 @@
           {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "STRING",
+                "value": "@"
+              },
               {
                 "type": "STRING",
                 "value": "$"
@@ -987,6 +833,10 @@
               {
                 "type": "STRING",
                 "value": "`"
+              },
+              {
+                "type": "STRING",
+                "value": ","
               }
             ]
           },

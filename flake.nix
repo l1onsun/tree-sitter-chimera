@@ -23,7 +23,8 @@
           default = pkgs.mkShell {
             buildInputs = [
               pkgs.tree-sitter
-              pkgs.nodejs-slim_23
+              pkgs.nodejs
+              pkgs.typescript-language-server
             ];
             # SOME_ENV_VAR = "";
           };
