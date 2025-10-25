@@ -11,8 +11,8 @@ Call vs Group
 
 (source_file
   (list_pattern
-    (function_call
-      (identifier)
+    (identifier)
+    (group
       (binnary_expression
         (identifier)
         (identifier)))))

@@ -16,10 +16,6 @@
           "named": true
         },
         {
-          "type": "function_call",
-          "named": true
-        },
-        {
           "type": "function_call_list",
           "named": true
         },
@@ -67,49 +63,6 @@
     }
   },
   {
-    "type": "function_call",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "binnary_expression",
-          "named": true
-        },
-        {
-          "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "function_call",
-          "named": true
-        },
-        {
-          "type": "function_call_list",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "list_pattern",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "function_call_list",
     "named": true,
     "fields": {},
@@ -123,10 +76,6 @@
         },
         {
           "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -169,10 +118,6 @@
           "named": true
         },
         {
-          "type": "function_call",
-          "named": true
-        },
-        {
           "type": "function_call_list",
           "named": true
         },
@@ -209,10 +154,6 @@
         },
         {
           "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {
@@ -256,10 +197,6 @@
           "named": true
         },
         {
-          "type": "function_call",
-          "named": true
-        },
-        {
           "type": "function_call_list",
           "named": true
         },
@@ -296,10 +233,6 @@
         },
         {
           "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "function_call",
           "named": true
         },
         {

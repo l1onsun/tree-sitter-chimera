@@ -36,22 +36,22 @@ Example
               (identifier))
             (binnary_expression
               (binnary_expression
-                (binnary_expression
-                  (group
-                    (binnary_expression
-                      (identifier)
-                      (unary_expression
-                        (identifier))))
-                  (identifier))
-                (binnary_expression
-                  (function_call
-                    (const_value
-                      (const_string))
-                    (binnary_expression
-                      (identifier)
-                      (unary_expression
-                        (identifier))))
-                  (identifier)))
+                (group
+                  (binnary_expression
+                    (identifier)
+                    (unary_expression
+                      (identifier))))
+                (identifier))
+              (const_value
+                (const_string)))
+            (binnary_expression
+              (binnary_expression
+                (group
+                  (binnary_expression
+                    (identifier)
+                    (unary_expression
+                      (identifier))))
+                (identifier))
               (const_value
                 (const_string)))
             (binnary_expression

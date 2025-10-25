@@ -13,7 +13,7 @@ const any_expression = ($) =>
     $.binnary_expression,
     $.unary_expression,
     $.const_value,
-    $.function_call,
+    // $.function_call,
     $.function_call_list,
     $.list_pattern,
     $.group,
@@ -25,8 +25,8 @@ module.exports = grammar({
   rules: {
     source_file: ($) => any_expression($),
     list_pattern: ($) => seq("[", repeat(any_expression($)), "]"),
-    function_call: ($) =>
-      prec.left(5, seq(any_expression($), "(", any_expression($), ")")),
+    // function_call: ($) =>
+    //   prec.left(5, seq(any_expression($), "(", any_expression($), ")")),
     function_call_list: ($) =>
       prec.left(5, seq(any_expression($), "{", repeat(any_expression($)), "}")),
     group: ($) => seq("(", any_expression($), ")"),
