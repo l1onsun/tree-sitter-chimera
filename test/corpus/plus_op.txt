@@ -1,0 +1,17 @@
+==================
+Plus Operator
+==================
+
+1 + 2 + 3
+
+---
+
+(source_file
+  (binnary_expression
+    (binnary_expression
+      (const_value
+        (const_number))
+      (const_value
+        (const_number)))
+    (const_value
+      (const_number))))

@@ -32,6 +32,10 @@
         {
           "type": "SYMBOL",
           "name": "list_pattern"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "group"
         }
       ]
     },
@@ -74,6 +78,10 @@
               {
                 "type": "SYMBOL",
                 "name": "list_pattern"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
               }
             ]
           }
@@ -120,6 +128,10 @@
               {
                 "type": "SYMBOL",
                 "name": "list_pattern"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
               }
             ]
           },
@@ -157,6 +169,10 @@
               {
                 "type": "SYMBOL",
                 "name": "list_pattern"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
               }
             ]
           },
@@ -203,6 +219,10 @@
               {
                 "type": "SYMBOL",
                 "name": "list_pattern"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
               }
             ]
           },
@@ -242,6 +262,10 @@
                 {
                   "type": "SYMBOL",
                   "name": "list_pattern"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "group"
                 }
               ]
             }
@@ -252,6 +276,56 @@
           }
         ]
       }
+    },
+    "group": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "("
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "binnary_expression"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "unary_expression"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "const_value"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "function_call"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "function_call_list"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "list_pattern"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "group"
+            }
+          ]
+        },
+        {
+          "type": "STRING",
+          "value": ")"
+        }
+      ]
     },
     "identifier": {
       "type": "PATTERN",
@@ -296,6 +370,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -338,6 +416,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -380,6 +462,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -422,6 +508,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -464,6 +554,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -538,6 +632,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -580,6 +678,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -626,6 +728,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -668,6 +774,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -722,6 +832,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -764,6 +878,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               },
@@ -801,6 +919,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "list_pattern"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "group"
                   }
                 ]
               }
@@ -870,6 +992,10 @@
               {
                 "type": "SYMBOL",
                 "name": "list_pattern"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
               }
             ]
           }

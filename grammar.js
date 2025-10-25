@@ -16,6 +16,7 @@ const any_expression = ($) =>
     $.function_call,
     $.function_call_list,
     $.list_pattern,
+    $.group,
   );
 
 module.exports = grammar({
@@ -28,6 +29,7 @@ module.exports = grammar({
       prec.left(5, seq(any_expression($), "(", any_expression($), ")")),
     function_call_list: ($) =>
       prec.left(5, seq(any_expression($), "{", repeat(any_expression($)), "}")),
+    group: ($) => seq("(", any_expression($), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     // expression: ($) => expression_fn($),

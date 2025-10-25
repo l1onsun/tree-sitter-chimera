@@ -1,0 +1,18 @@
+==================
+Call vs Group
+==================
+
+[
+  func
+  (foo + bar)
+]
+
+---
+
+(source_file
+  (list_pattern
+    (function_call
+      (identifier)
+      (binnary_expression
+        (identifier)
+        (identifier)))))

@@ -1,0 +1,66 @@
+==================
+Example
+==================
+
+@ctx.map {
+  engine = JsonRpcEngine {
+    "hello" = @ctx.eff {
+      (Stream::$stdout).writeln: "Hello World!"
+      (Stream::$stdout).writeln: "Really hello!"
+      @return: json {
+        "ok" = @true
+      }
+    }
+  }
+}
+
+---
+
+(source_file
+  (function_call_list
+    (binnary_expression
+      (unary_expression
+        (identifier))
+      (identifier))
+    (binnary_expression
+      (identifier)
+      (function_call_list
+        (identifier)
+        (binnary_expression
+          (const_value
+            (const_string))
+          (function_call_list
+            (binnary_expression
+              (unary_expression
+                (identifier))
+              (identifier))
+            (binnary_expression
+              (binnary_expression
+                (binnary_expression
+                  (group
+                    (binnary_expression
+                      (identifier)
+                      (unary_expression
+                        (identifier))))
+                  (identifier))
+                (binnary_expression
+                  (function_call
+                    (const_value
+                      (const_string))
+                    (binnary_expression
+                      (identifier)
+                      (unary_expression
+                        (identifier))))
+                  (identifier)))
+              (const_value
+                (const_string)))
+            (binnary_expression
+              (unary_expression
+                (identifier))
+              (function_call_list
+                (identifier)
+                (binnary_expression
+                  (const_value
+                    (const_string))
+                  (unary_expression
+                    (identifier)))))))))))

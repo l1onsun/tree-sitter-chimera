@@ -1,0 +1,31 @@
+==================
+Map
+==================
+
+@ctx.map {
+  main = one + two
+  one = 1
+  two = 2
+}
+
+---
+
+(source_file
+  (function_call_list
+    (binnary_expression
+      (unary_expression
+        (identifier))
+      (identifier))
+    (binnary_expression
+      (identifier)
+      (binnary_expression
+        (identifier)
+        (identifier)))
+    (binnary_expression
+      (identifier)
+      (const_value
+        (const_number)))
+    (binnary_expression
+      (identifier)
+      (const_value
+        (const_number)))))

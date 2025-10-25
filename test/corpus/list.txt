@@ -1,0 +1,15 @@
+==================
+List
+==================
+
+[1 2 3]
+---
+
+(source_file
+  (list_pattern
+    (const_value
+      (const_number))
+    (const_value
+      (const_number))
+    (const_value
+      (const_number))))
