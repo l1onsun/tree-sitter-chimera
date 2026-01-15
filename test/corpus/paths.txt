@@ -1,0 +1,31 @@
+==================
+Paths
+==================
+
+relative = ./some/path
+absolutre = /home/user/file.txt
+
+func. ./a/b/c
+func. /a/b/c
+
+abra/cadabra / ./boom
+
+---
+
+(source_file
+  (binnary_expression
+    (identifier)
+    (path))
+  (binnary_expression
+    (identifier)
+    (path))
+  (binnary_expression
+    (identifier)
+    (path))
+  (binnary_expression
+    (identifier)
+    (path))
+  (identifier)
+  (binnary_expression
+    (path)
+    (path)))

@@ -1,0 +1,13 @@
+==================
+Path vs Identifier - should be fixed in future
+==================
+
+ident/ident
+ident./path
+---
+
+(source_file
+  (identifier)
+  (path)
+  (identifier)
+  (path))

@@ -10,12 +10,14 @@
 const any_expression = ($) =>
   choice(
     $.identifier,
+    $.path,
     $.binnary_expression,
     $.unary_expression,
     $.const_value,
     // $.function_call,
-    $.function_call_list,
+    // $.function_call_list,
     $.list_pattern,
+    $.curly_list_pattern,
     $.group,
   );
 
@@ -23,15 +25,25 @@ module.exports = grammar({
   name: "chimera",
 
   rules: {
-    source_file: ($) => any_expression($),
+    source_file: ($) => repeat(any_expression($)),
     list_pattern: ($) => seq("[", repeat(any_expression($)), "]"),
+    curly_list_pattern: ($) => seq("{", repeat(any_expression($)), "}"),
     // function_call: ($) =>
     //   prec.left(5, seq(any_expression($), "(", any_expression($), ")")),
-    function_call_list: ($) =>
-      prec.left(5, seq(any_expression($), "{", repeat(any_expression($)), "}")),
+    // function_call_list: ($) =>
+    //   prec.left(5, seq(any_expression($), "{", repeat(any_expression($)), "}")),
     group: ($) => seq("(", any_expression($), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+    path: ($) =>
+      token(
+        choice(
+          // absolute: /a/b/c
+          /\/[^\s\]\)\}\,;"]+(?:\/[^\s\]\)\}\,;"]+)*/,
+          // relative: ./a/b/c
+          /\.\/[^\s\]\)\}\,;"]+(?:\/[^\s\]\)\}\,;"]+)*/,
+        ),
+      ),
     // expression: ($) => expression_fn($),
 
     // left_operator: ($) => prec.left(9, seq("%", any_expression($))),
@@ -41,10 +53,10 @@ module.exports = grammar({
     // unary_expression: ($) => seq(choice("+", "-", "$"), expression_fn($))
     binnary_expression: ($) =>
       choice(
-        prec.left(0, seq(any_expression($), choice("="), any_expression($))),
+        prec.left(0, seq(any_expression($), "=", any_expression($))),
         // prec.left(1, seq(any_expression($), choice($.left_operator, $.right_operator), any_expression($))),
         // prec.left(1, seq(any_expression($), $.right_operator, any_expression($))),
-        prec.left(2, seq(any_expression($), choice(":"), any_expression($))),
+        prec.left(2, seq(any_expression($), ":", any_expression($))),
         prec.left(
           3,
           seq(

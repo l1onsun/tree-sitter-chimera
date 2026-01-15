@@ -3,37 +3,44 @@
   "name": "chimera",
   "rules": {
     "source_file": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "identifier"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "binnary_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "unary_expression"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "const_value"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "function_call_list"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "list_pattern"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "group"
-        }
-      ]
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "identifier"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "path"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "binnary_expression"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "unary_expression"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "const_value"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "list_pattern"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "curly_list_pattern"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "group"
+          }
+        ]
+      }
     },
     "list_pattern": {
       "type": "SEQ",
@@ -53,6 +60,10 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "path"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "binnary_expression"
               },
               {
@@ -65,11 +76,11 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "function_call_list"
+                "name": "list_pattern"
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "curly_list_pattern"
               },
               {
                 "type": "SYMBOL",
@@ -84,18 +95,25 @@
         }
       ]
     },
-    "function_call_list": {
-      "type": "PREC_LEFT",
-      "value": 5,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
+    "curly_list_pattern": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
             "type": "CHOICE",
             "members": [
               {
                 "type": "SYMBOL",
                 "name": "identifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "path"
               },
               {
                 "type": "SYMBOL",
@@ -111,64 +129,24 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "function_call_list"
+                "name": "list_pattern"
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "curly_list_pattern"
               },
               {
                 "type": "SYMBOL",
                 "name": "group"
               }
             ]
-          },
-          {
-            "type": "STRING",
-            "value": "{"
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "binnary_expression"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "unary_expression"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "const_value"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "function_call_list"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "list_pattern"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "group"
-                }
-              ]
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "}"
           }
-        ]
-      }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
     },
     "group": {
       "type": "SEQ",
@@ -186,6 +164,10 @@
             },
             {
               "type": "SYMBOL",
+              "name": "path"
+            },
+            {
+              "type": "SYMBOL",
               "name": "binnary_expression"
             },
             {
@@ -198,11 +180,11 @@
             },
             {
               "type": "SYMBOL",
-              "name": "function_call_list"
+              "name": "list_pattern"
             },
             {
               "type": "SYMBOL",
-              "name": "list_pattern"
+              "name": "curly_list_pattern"
             },
             {
               "type": "SYMBOL",
@@ -219,6 +201,22 @@
     "identifier": {
       "type": "PATTERN",
       "value": "[a-zA-Z_][a-zA-Z0-9_]*"
+    },
+    "path": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "\\/[^\\s\\]\\)\\}\\,;\"]+(?:\\/[^\\s\\]\\)\\}\\,;\"]+)*"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\.\\/[^\\s\\]\\)\\}\\,;\"]+(?:\\/[^\\s\\]\\)\\}\\,;\"]+)*"
+          }
+        ]
+      }
     },
     "binnary_expression": {
       "type": "CHOICE",
@@ -238,6 +236,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -250,11 +252,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -263,13 +265,8 @@
                 ]
               },
               {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "="
-                  }
-                ]
+                "type": "STRING",
+                "value": "="
               },
               {
                 "type": "CHOICE",
@@ -280,6 +277,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -292,11 +293,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -322,6 +323,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -334,11 +339,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -347,13 +352,8 @@
                 ]
               },
               {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": ":"
-                  }
-                ]
+                "type": "STRING",
+                "value": ":"
               },
               {
                 "type": "CHOICE",
@@ -364,6 +364,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -376,11 +380,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -406,6 +410,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -418,11 +426,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -480,6 +488,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -492,11 +504,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -522,6 +534,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -534,11 +550,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -568,6 +584,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -580,11 +600,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -610,6 +630,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -622,11 +646,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -664,6 +688,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -676,11 +704,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -706,6 +734,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -718,11 +750,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -743,6 +775,10 @@
                   },
                   {
                     "type": "SYMBOL",
+                    "name": "path"
+                  },
+                  {
+                    "type": "SYMBOL",
                     "name": "binnary_expression"
                   },
                   {
@@ -755,11 +791,11 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "function_call_list"
+                    "name": "list_pattern"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "curly_list_pattern"
                   },
                   {
                     "type": "SYMBOL",
@@ -812,6 +848,10 @@
               },
               {
                 "type": "SYMBOL",
+                "name": "path"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "binnary_expression"
               },
               {
@@ -824,11 +864,11 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "function_call_list"
+                "name": "list_pattern"
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "curly_list_pattern"
               },
               {
                 "type": "SYMBOL",
