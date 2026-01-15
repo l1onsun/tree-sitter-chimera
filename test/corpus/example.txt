@@ -22,12 +22,12 @@ Example
       (unary_expression
         (identifier))
       (identifier))
-    (curly_list_pattern
+    (curly_list
       (binnary_expression
         (identifier)
         (binnary_expression
           (identifier)
-          (curly_list_pattern
+          (curly_list
             (binnary_expression
               (const_value
                 (const_string))
@@ -36,7 +36,7 @@ Example
                   (unary_expression
                     (identifier))
                   (identifier))
-                (curly_list_pattern
+                (curly_list
                   (binnary_expression
                     (binnary_expression
                       (group
@@ -62,7 +62,7 @@ Example
                       (identifier))
                     (binnary_expression
                       (identifier)
-                      (curly_list_pattern
+                      (curly_list
                         (binnary_expression
                           (const_value
                             (const_string))

@@ -14,10 +14,9 @@ const any_expression = ($) =>
     $.binnary_expression,
     $.unary_expression,
     $.const_value,
-    // $.function_call,
-    // $.function_call_list,
-    $.list_pattern,
-    $.curly_list_pattern,
+    $.list,
+    $.curly_list,
+    $.pipe,
     $.group,
   );
 
@@ -26,12 +25,9 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => repeat(any_expression($)),
-    list_pattern: ($) => seq("[", repeat(any_expression($)), "]"),
-    curly_list_pattern: ($) => seq("{", repeat(any_expression($)), "}"),
-    // function_call: ($) =>
-    //   prec.left(5, seq(any_expression($), "(", any_expression($), ")")),
-    // function_call_list: ($) =>
-    //   prec.left(5, seq(any_expression($), "{", repeat(any_expression($)), "}")),
+    list: ($) => seq("[", repeat(any_expression($)), "]"),
+    curly_list: ($) => seq("{", repeat(any_expression($)), "}"),
+    pipe: ($) => seq("\\", repeat1(any_expression($)), "|"),
     group: ($) => seq("(", any_expression($), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
@@ -44,18 +40,10 @@ module.exports = grammar({
           /\.\/[^\s\]\)\}\,;"]+(?:\/[^\s\]\)\}\,;"]+)*/,
         ),
       ),
-    // expression: ($) => expression_fn($),
 
-    // left_operator: ($) => prec.left(9, seq("%", any_expression($))),
-    // right_operator: ($) => prec.left(8, seq(any_expression($), "%")),
-    // left_operator: ($) => prec(6, token(seq("@", any_expression($)))),
-
-    // unary_expression: ($) => seq(choice("+", "-", "$"), expression_fn($))
     binnary_expression: ($) =>
       choice(
         prec.left(0, seq(any_expression($), "=", any_expression($))),
-        // prec.left(1, seq(any_expression($), choice($.left_operator, $.right_operator), any_expression($))),
-        // prec.left(1, seq(any_expression($), $.right_operator, any_expression($))),
         prec.left(2, seq(any_expression($), ":", any_expression($))),
         prec.left(
           3,
@@ -71,14 +59,13 @@ module.exports = grammar({
         ),
         prec.left(
           5,
-          seq(any_expression($), choice("*", "/", "%", "|"), any_expression($)),
+          seq(any_expression($), choice("*", "/", "%"), any_expression($)),
         ),
         prec.left(7, seq(any_expression($), ".", any_expression($))),
       ),
 
     unary_expression: ($) =>
       prec.left(8, seq(choice("@", "$", "&", "`", ","), any_expression($))),
-    // unary_expression: ($) => token(seq(choice("$", "&", "`"), any_expression($))),
 
     const_value: ($) => choice($.const_string, $.const_number),
     const_number: ($) => /\d+/,

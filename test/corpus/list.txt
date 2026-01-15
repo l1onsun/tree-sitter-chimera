@@ -6,7 +6,7 @@ List
 ---
 
 (source_file
-  (list_pattern
+  (list
     (const_value
       (const_number))
     (const_value

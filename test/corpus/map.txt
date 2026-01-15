@@ -16,7 +16,7 @@ Map
       (unary_expression
         (identifier))
       (identifier))
-    (curly_list_pattern
+    (curly_list
       (binnary_expression
         (identifier)
         (binnary_expression

@@ -10,7 +10,7 @@ Call vs Group
 ---
 
 (source_file
-  (list_pattern
+  (list
     (identifier)
     (group
       (binnary_expression

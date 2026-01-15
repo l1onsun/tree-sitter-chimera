@@ -29,11 +29,15 @@
           },
           {
             "type": "SYMBOL",
-            "name": "list_pattern"
+            "name": "list"
           },
           {
             "type": "SYMBOL",
-            "name": "curly_list_pattern"
+            "name": "curly_list"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "pipe"
           },
           {
             "type": "SYMBOL",
@@ -42,7 +46,7 @@
         ]
       }
     },
-    "list_pattern": {
+    "list": {
       "type": "SEQ",
       "members": [
         {
@@ -76,11 +80,15 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "list"
               },
               {
                 "type": "SYMBOL",
-                "name": "curly_list_pattern"
+                "name": "curly_list"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "pipe"
               },
               {
                 "type": "SYMBOL",
@@ -95,7 +103,7 @@
         }
       ]
     },
-    "curly_list_pattern": {
+    "curly_list": {
       "type": "SEQ",
       "members": [
         {
@@ -129,11 +137,15 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "list"
               },
               {
                 "type": "SYMBOL",
-                "name": "curly_list_pattern"
+                "name": "curly_list"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "pipe"
               },
               {
                 "type": "SYMBOL",
@@ -147,6 +159,67 @@
           "value": "}"
         }
       ]
+    },
+    "pipe": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "\\"
+          },
+          {
+            "type": "REPEAT1",
+            "content": {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "path"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "binnary_expression"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "unary_expression"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "const_value"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "list"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "curly_list"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "pipe"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "group"
+                }
+              ]
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "|"
+          }
+        ]
+      }
     },
     "group": {
       "type": "SEQ",
@@ -180,11 +253,15 @@
             },
             {
               "type": "SYMBOL",
-              "name": "list_pattern"
+              "name": "list"
             },
             {
               "type": "SYMBOL",
-              "name": "curly_list_pattern"
+              "name": "curly_list"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "pipe"
             },
             {
               "type": "SYMBOL",
@@ -252,11 +329,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -293,11 +374,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -339,11 +424,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -380,11 +469,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -426,11 +519,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -504,11 +601,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -550,11 +651,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -600,11 +705,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -646,11 +755,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -672,10 +785,6 @@
                   {
                     "type": "STRING",
                     "value": "%"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "|"
                   }
                 ]
               },
@@ -704,11 +813,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -750,11 +863,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -791,11 +908,15 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "list_pattern"
+                    "name": "list"
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "curly_list_pattern"
+                    "name": "curly_list"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -864,11 +985,15 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "list_pattern"
+                "name": "list"
               },
               {
                 "type": "SYMBOL",
-                "name": "curly_list_pattern"
+                "name": "curly_list"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "pipe"
               },
               {
                 "type": "SYMBOL",

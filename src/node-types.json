@@ -16,7 +16,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -28,11 +28,15 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -67,7 +71,7 @@
     }
   },
   {
-    "type": "curly_list_pattern",
+    "type": "curly_list",
     "named": true,
     "fields": {},
     "children": {
@@ -83,7 +87,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -95,11 +99,15 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -126,7 +134,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -138,11 +146,15 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -153,7 +165,7 @@
     }
   },
   {
-    "type": "list_pattern",
+    "type": "list",
     "named": true,
     "fields": {},
     "children": {
@@ -169,7 +181,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -181,11 +193,62 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
+          "named": true
+        },
+        {
+          "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pipe",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binnary_expression",
+          "named": true
+        },
+        {
+          "type": "const_value",
+          "named": true
+        },
+        {
+          "type": "curly_list",
+          "named": true
+        },
+        {
+          "type": "group",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -213,7 +276,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -225,11 +288,15 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -256,7 +323,7 @@
           "named": true
         },
         {
-          "type": "curly_list_pattern",
+          "type": "curly_list",
           "named": true
         },
         {
@@ -268,11 +335,15 @@
           "named": true
         },
         {
-          "type": "list_pattern",
+          "type": "list",
           "named": true
         },
         {
           "type": "path",
+          "named": true
+        },
+        {
+          "type": "pipe",
           "named": true
         },
         {
@@ -376,6 +447,10 @@
   },
   {
     "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\",
     "named": false
   },
   {
