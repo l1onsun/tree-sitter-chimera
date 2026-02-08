@@ -10,7 +10,7 @@ _^
 ---
 
 (source_file
-  (binnary_expression
+  (binary_expression
     (identifier)
     (const_value
       (cat_string

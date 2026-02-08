@@ -7,8 +7,8 @@ Plus Operator
 ---
 
 (source_file
-  (binnary_expression
-    (binnary_expression
+  (binary_expression
+    (binary_expression
       (const_value
         (const_number))
       (const_value

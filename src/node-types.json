@@ -1,6 +1,6 @@
 [
   {
-    "type": "binnary_expression",
+    "type": "binary_expression",
     "named": true,
     "fields": {},
     "children": {
@@ -8,7 +8,7 @@
       "required": true,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -98,7 +98,7 @@
       "required": false,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -141,7 +141,7 @@
       "required": false,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -184,7 +184,7 @@
       "required": false,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -247,7 +247,7 @@
       "required": false,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -290,7 +290,7 @@
       "required": true,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "binary_expression",
           "named": true
         },
         {
@@ -362,10 +362,6 @@
   },
   {
     "type": "+",
-    "named": false
-  },
-  {
-    "type": ",",
     "named": false
   },
   {

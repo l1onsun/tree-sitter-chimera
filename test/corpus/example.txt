@@ -17,53 +17,53 @@ Example
 ---
 
 (source_file
-  (binnary_expression
-    (binnary_expression
+  (binary_expression
+    (binary_expression
       (unary_expression
         (identifier))
       (identifier))
     (curly_list
-      (binnary_expression
+      (binary_expression
         (identifier)
-        (binnary_expression
+        (binary_expression
           (identifier)
           (curly_list
-            (binnary_expression
+            (binary_expression
               (const_value
                 (const_string))
-              (binnary_expression
-                (binnary_expression
+              (binary_expression
+                (binary_expression
                   (unary_expression
                     (identifier))
                   (identifier))
                 (curly_list
-                  (binnary_expression
-                    (binnary_expression
+                  (binary_expression
+                    (binary_expression
                       (group
-                        (binnary_expression
+                        (binary_expression
                           (identifier)
                           (unary_expression
                             (identifier))))
                       (identifier))
                     (const_value
                       (const_string)))
-                  (binnary_expression
-                    (binnary_expression
+                  (binary_expression
+                    (binary_expression
                       (group
-                        (binnary_expression
+                        (binary_expression
                           (identifier)
                           (unary_expression
                             (identifier))))
                       (identifier))
                     (const_value
                       (const_string)))
-                  (binnary_expression
+                  (binary_expression
                     (unary_expression
                       (identifier))
-                    (binnary_expression
+                    (binary_expression
                       (identifier)
                       (curly_list
-                        (binnary_expression
+                        (binary_expression
                           (const_value
                             (const_string))
                           (unary_expression

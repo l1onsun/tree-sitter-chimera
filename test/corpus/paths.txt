@@ -13,19 +13,19 @@ abra/cadabra / ./boom
 ---
 
 (source_file
-  (binnary_expression
+  (binary_expression
     (identifier)
     (path))
-  (binnary_expression
+  (binary_expression
     (identifier)
     (path))
-  (binnary_expression
+  (binary_expression
     (identifier)
     (path))
-  (binnary_expression
+  (binary_expression
     (identifier)
     (path))
   (identifier)
-  (binnary_expression
+  (binary_expression
     (path)
     (path)))

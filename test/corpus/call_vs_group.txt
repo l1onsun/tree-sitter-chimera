@@ -13,6 +13,6 @@ Call vs Group
   (list
     (identifier)
     (group
-      (binnary_expression
+      (binary_expression
         (identifier)
         (identifier)))))

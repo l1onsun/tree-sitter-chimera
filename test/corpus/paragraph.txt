@@ -10,7 +10,7 @@ sys.exit(0)
 ---
 
 (source_file
-  (binnary_expression
+  (binary_expression
     (identifier)
     (const_value
       (paragrapth

@@ -11,7 +11,7 @@ const any_expression = ($) =>
   choice(
     $.identifier,
     $.path,
-    $.binnary_expression,
+    $.binary_expression,
     $.unary_expression,
     $.const_value,
     $.list,
@@ -40,7 +40,7 @@ module.exports = grammar({
         ),
       ),
 
-    binnary_expression: ($) =>
+    binary_expression: ($) =>
       choice(
         prec.left(0, seq(any_expression($), "=", any_expression($))),
         prec.left(2, seq(any_expression($), ":", any_expression($))),

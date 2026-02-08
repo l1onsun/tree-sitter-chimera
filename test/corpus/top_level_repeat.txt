@@ -8,16 +8,16 @@ b = 15
 ---
 
 (source_file
-  (binnary_expression
+  (binary_expression
     (identifier)
-    (binnary_expression
+    (binary_expression
       (identifier)
       (identifier)))
-  (binnary_expression
+  (binary_expression
     (identifier)
     (const_value
       (const_number)))
-  (binnary_expression
+  (binary_expression
     (identifier)
     (const_value
       (const_number))))
