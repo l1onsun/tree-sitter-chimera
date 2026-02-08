@@ -58,13 +58,13 @@ module.exports = grammar({
         ),
         prec.left(
           5,
-          seq(any_expression($), choice("*", "/", "%"), any_expression($)),
+          seq(any_expression($), choice("*", "/"), any_expression($)),
         ),
         prec.left(7, seq(any_expression($), ".", any_expression($))),
       ),
 
     unary_expression: ($) =>
-      prec.left(8, seq(choice("@", "$", "&", "`", ","), any_expression($))),
+      prec.left(8, seq(choice("@", "$", "&", "`", "%"), any_expression($))),
 
     const_value: ($) =>
       choice($.const_string, $.const_number, $.paragrapth, $.cat_string),
