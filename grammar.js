@@ -16,7 +16,6 @@ const any_expression = ($) =>
     $.const_value,
     $.list,
     $.curly_list,
-    $.pipe,
     $.group,
   );
 
@@ -25,10 +24,10 @@ module.exports = grammar({
 
   rules: {
     source_file: ($) => repeat(any_expression($)),
+
     list: ($) => seq("[", repeat(any_expression($)), "]"),
     curly_list: ($) => seq("{", repeat(any_expression($)), "}"),
-    pipe: ($) => seq("\\", repeat1(any_expression($)), "|"),
-    group: ($) => seq("(", any_expression($), ")"),
+    group: ($) => seq("(", repeat(any_expression($)), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     path: ($) =>
@@ -67,9 +66,27 @@ module.exports = grammar({
     unary_expression: ($) =>
       prec.left(8, seq(choice("@", "$", "&", "`", ","), any_expression($))),
 
-    const_value: ($) => choice($.const_string, $.const_number),
+    const_value: ($) =>
+      choice($.const_string, $.const_number, $.paragrapth, $.cat_string),
     const_number: ($) => /\d+/,
     const_string: ($) => seq('"', /[^"]*/, '"'),
+    paragrapth: ($) =>
+      seq(
+        ",,,",
+        optional(seq($.paragrapth_head, "\n")),
+        repeat($.paragrapth_content),
+        "\n,,,",
+      ),
+    paragrapth_head: ($) => /[a-zA-Z0-9_+-]+/,
+    paragrapth_content: ($) => /[^\n]+|\n/,
+    cat_string: ($) =>
+      seq(
+        "^_",
+        optional($.paragrapth_head),
+        /\s/,
+        repeat(choice(/[^_]/, seq("_", /[^^]/))),
+        "_^",
+      ),
 
     comment: ($) => token(seq(";", /.*/)),
   },

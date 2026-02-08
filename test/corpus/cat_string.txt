@@ -1,0 +1,17 @@
+==================
+Cat string
+==================
+
+x = ^_python
+import sys
+sys.exit(0)
+_^
+
+---
+
+(source_file
+  (binnary_expression
+    (identifier)
+    (const_value
+      (cat_string
+        (paragrapth_head)))))

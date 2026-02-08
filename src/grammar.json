@@ -37,10 +37,6 @@
           },
           {
             "type": "SYMBOL",
-            "name": "pipe"
-          },
-          {
-            "type": "SYMBOL",
             "name": "group"
           }
         ]
@@ -85,10 +81,6 @@
               {
                 "type": "SYMBOL",
                 "name": "curly_list"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "pipe"
               },
               {
                 "type": "SYMBOL",
@@ -145,10 +137,6 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "pipe"
-              },
-              {
-                "type": "SYMBOL",
                 "name": "group"
               }
             ]
@@ -160,67 +148,6 @@
         }
       ]
     },
-    "pipe": {
-      "type": "PREC_RIGHT",
-      "value": 0,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "\\"
-          },
-          {
-            "type": "REPEAT1",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "identifier"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "path"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "binnary_expression"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "unary_expression"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "const_value"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "list"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "curly_list"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "pipe"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "group"
-                }
-              ]
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "|"
-          }
-        ]
-      }
-    },
     "group": {
       "type": "SEQ",
       "members": [
@@ -229,45 +156,44 @@
           "value": "("
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "path"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "binnary_expression"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "unary_expression"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "const_value"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "list"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "curly_list"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "pipe"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "group"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "identifier"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "path"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "binnary_expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "unary_expression"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "const_value"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "list"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "curly_list"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "group"
+              }
+            ]
+          }
         },
         {
           "type": "STRING",
@@ -337,10 +263,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -379,10 +301,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -432,10 +350,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -474,10 +388,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -524,10 +434,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -609,10 +515,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -656,10 +558,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -713,10 +611,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -760,10 +654,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -821,10 +711,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -871,10 +757,6 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "pipe"
-                  },
-                  {
-                    "type": "SYMBOL",
                     "name": "group"
                   }
                 ]
@@ -913,10 +795,6 @@
                   {
                     "type": "SYMBOL",
                     "name": "curly_list"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "pipe"
                   },
                   {
                     "type": "SYMBOL",
@@ -993,10 +871,6 @@
               },
               {
                 "type": "SYMBOL",
-                "name": "pipe"
-              },
-              {
-                "type": "SYMBOL",
                 "name": "group"
               }
             ]
@@ -1014,6 +888,14 @@
         {
           "type": "SYMBOL",
           "name": "const_number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "paragrapth"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cat_string"
         }
       ]
     },
@@ -1035,6 +917,109 @@
         {
           "type": "STRING",
           "value": "\""
+        }
+      ]
+    },
+    "paragrapth": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ",,,"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "paragrapth_head"
+                },
+                {
+                  "type": "STRING",
+                  "value": "\n"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragrapth_content"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "\n,,,"
+        }
+      ]
+    },
+    "paragrapth_head": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9_+-]+"
+    },
+    "paragrapth_content": {
+      "type": "PATTERN",
+      "value": "[^\\n]+|\\n"
+    },
+    "cat_string": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "^_"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "paragrapth_head"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\s"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "PATTERN",
+                "value": "[^_]"
+              },
+              {
+                "type": "SEQ",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "_"
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[^^]"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "_^"
         }
       ]
     },

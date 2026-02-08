@@ -36,11 +36,22 @@
           "named": true
         },
         {
-          "type": "pipe",
-          "named": true
-        },
-        {
           "type": "unary_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cat_string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "paragrapth_head",
           "named": true
         }
       ]
@@ -60,11 +71,19 @@
       "required": true,
       "types": [
         {
+          "type": "cat_string",
+          "named": true
+        },
+        {
           "type": "const_number",
           "named": true
         },
         {
           "type": "const_string",
+          "named": true
+        },
+        {
+          "type": "paragrapth",
           "named": true
         }
       ]
@@ -107,10 +126,6 @@
           "named": true
         },
         {
-          "type": "pipe",
-          "named": true
-        },
-        {
           "type": "unary_expression",
           "named": true
         }
@@ -122,8 +137,8 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
           "type": "binnary_expression",
@@ -151,10 +166,6 @@
         },
         {
           "type": "path",
-          "named": true
-        },
-        {
-          "type": "pipe",
           "named": true
         },
         {
@@ -201,10 +212,6 @@
           "named": true
         },
         {
-          "type": "pipe",
-          "named": true
-        },
-        {
           "type": "unary_expression",
           "named": true
         }
@@ -212,47 +219,19 @@
     }
   },
   {
-    "type": "pipe",
+    "type": "paragrapth",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "binnary_expression",
+          "type": "paragrapth_content",
           "named": true
         },
         {
-          "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "curly_list",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        },
-        {
-          "type": "pipe",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "paragrapth_head",
           "named": true
         }
       ]
@@ -293,10 +272,6 @@
         },
         {
           "type": "path",
-          "named": true
-        },
-        {
-          "type": "pipe",
           "named": true
         },
         {
@@ -343,15 +318,19 @@
           "named": true
         },
         {
-          "type": "pipe",
-          "named": true
-        },
-        {
           "type": "unary_expression",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "\n,,,",
+    "named": false
   },
   {
     "type": "\"",
@@ -387,6 +366,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": ",,,",
     "named": false
   },
   {
@@ -450,11 +433,19 @@
     "named": false
   },
   {
-    "type": "\\",
+    "type": "]",
     "named": false
   },
   {
-    "type": "]",
+    "type": "^_",
+    "named": false
+  },
+  {
+    "type": "_",
+    "named": false
+  },
+  {
+    "type": "_^",
     "named": false
   },
   {
@@ -475,15 +466,19 @@
     "named": true
   },
   {
+    "type": "paragrapth_content",
+    "named": true
+  },
+  {
+    "type": "paragrapth_head",
+    "named": true
+  },
+  {
     "type": "path",
     "named": true
   },
   {
     "type": "{",
-    "named": false
-  },
-  {
-    "type": "|",
     "named": false
   },
   {
