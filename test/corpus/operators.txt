@@ -1,0 +1,40 @@
+==================
+Operators
+==================
+
+plus2 = %0 + 2
+result = plus2.10 + plus2.20
+result2 = 10 |plus2 + 20 |plus2
+---
+
+(source_file
+  (binary_expression
+    (identifier)
+    (binary_expression
+      (unary_expression
+        (const_value
+          (const_number)))
+      (const_value
+        (const_number))))
+  (binary_expression
+    (identifier)
+    (binary_expression
+      (binary_expression
+        (identifier)
+        (const_value
+          (const_number)))
+      (binary_expression
+        (identifier)
+        (const_value
+          (const_number)))))
+  (binary_expression
+    (identifier)
+    (binary_expression
+      (binary_expression
+        (const_value
+          (const_number))
+        (identifier))
+      (binary_expression
+        (const_value
+          (const_number))
+        (identifier)))))
