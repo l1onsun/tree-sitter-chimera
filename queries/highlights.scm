@@ -19,6 +19,10 @@
   . "%" 
   . (_) @variable.parameter) @variable.parameter
 
+(unary_expression
+  . "@" 
+  . (_) @variable.parameter) @variable.parameter
+
 ; 4. Остальные операторы
 ; Список операторов исключает "=", так как он выделен выше, и "%", который выделен как parameter.
 ; Операторы binary_expression
@@ -31,7 +35,7 @@
 
 ; Операторы unary_expression (кроме %)
 [
-  "@" "$" "&" "`"
+  "$" "&" "`"
 ] @operator
 
 ; 5. Комменты
