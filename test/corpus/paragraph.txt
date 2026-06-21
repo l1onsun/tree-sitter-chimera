@@ -10,10 +10,11 @@ sys.exit(0)
 ---
 
 (source_file
-  (binary_expression
-    (identifier)
-    (const_value
-      (paragrapth
-        (paragrapth_head)
-        (paragrapth_content)
-        (paragrapth_content)))))
+  (pair_tail
+    (binary_expression
+      (identifier)
+      (const_value
+        (paragrapth
+          (paragrapth_head)
+          (paragrapth_content)
+          (paragrapth_content))))))

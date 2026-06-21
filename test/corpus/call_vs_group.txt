@@ -10,9 +10,11 @@ Call vs Group
 ---
 
 (source_file
-  (list
-    (identifier)
-    (group
-      (binary_expression
-        (identifier)
-        (identifier)))))
+  (pair_tail
+    (list
+      (identifier)
+      (group
+        (pair_tail
+          (binary_expression
+            (identifier)
+            (identifier)))))))

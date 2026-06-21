@@ -7,11 +7,12 @@ Plus Operator
 ---
 
 (source_file
-  (binary_expression
+  (pair_tail
     (binary_expression
+      (binary_expression
+        (const_value
+          (const_number))
+        (const_value
+          (const_number)))
       (const_value
-        (const_number))
-      (const_value
-        (const_number)))
-    (const_value
-      (const_number))))
+        (const_number)))))

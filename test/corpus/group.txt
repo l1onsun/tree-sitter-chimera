@@ -1,0 +1,89 @@
+==================
+Group - single element
+==================
+
+(a)
+
+---
+
+(source_file
+  (pair_tail
+    (group
+      (pair_tail
+        (identifier)))))
+
+==================
+Group - pair
+==================
+
+(a b)
+
+---
+
+(source_file
+  (pair_tail
+    (group
+      (pair_tail
+        (identifier)
+        (pair_tail
+          (identifier))))))
+
+==================
+Group - recursive triple
+==================
+
+(a b c)
+
+---
+
+(source_file
+  (pair_tail
+    (group
+      (pair_tail
+        (identifier)
+        (pair_tail
+          (identifier)
+          (pair_tail
+            (identifier)))))))
+
+==================
+Group - recursive quadruple
+==================
+
+(a b c d)
+
+---
+
+(source_file
+  (pair_tail
+    (group
+      (pair_tail
+        (identifier)
+        (pair_tail
+          (identifier)
+          (pair_tail
+            (identifier)
+            (pair_tail
+              (identifier))))))))
+
+==================
+Group - nested groups
+==================
+
+(a (b c) d)
+
+---
+
+(source_file
+  (pair_tail
+    (group
+      (pair_tail
+        (identifier)
+        (pair_tail
+          (group
+            (pair_tail
+              (identifier)
+              (pair_tail
+                (identifier))))
+          (pair_tail
+            (identifier)))))))

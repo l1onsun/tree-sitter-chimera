@@ -10,8 +10,9 @@ _^
 ---
 
 (source_file
-  (binary_expression
-    (identifier)
-    (const_value
-      (cat_string
-        (paragrapth_head)))))
+  (pair_tail
+    (binary_expression
+      (identifier)
+      (const_value
+        (cat_string
+          (paragrapth_head))))))

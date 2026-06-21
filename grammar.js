@@ -23,11 +23,15 @@ module.exports = grammar({
   name: "chimera",
 
   rules: {
-    source_file: ($) => repeat(any_expression($)),
+    source_file: ($) => optional($.pair_tail),
 
     list: ($) => seq("[", repeat(any_expression($)), "]"),
     curly_list: ($) => seq("{", repeat(any_expression($)), "}"),
-    group: ($) => seq("(", repeat(any_expression($)), ")"),
+    group: ($) => seq("(", optional($.pair_tail), ")"),
+    pair_tail: ($) => choice(
+      any_expression($),                          // base: (a b)
+      seq(any_expression($), $.pair_tail),        // recursive: (a b c) = pair(a, pair(b, c))
+    ),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     path: ($) =>

@@ -3,44 +3,16 @@
   "name": "chimera",
   "rules": {
     "source_file": {
-      "type": "REPEAT",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SYMBOL",
-            "name": "identifier"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "path"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "binary_expression"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "unary_expression"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "const_value"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "list"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "curly_list"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "group"
-          }
-        ]
-      }
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "pair_tail"
+        },
+        {
+          "type": "BLANK"
+        }
+      ]
     },
     "list": {
       "type": "SEQ",
@@ -156,48 +128,108 @@
           "value": "("
         },
         {
-          "type": "REPEAT",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "identifier"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "path"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "binary_expression"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "unary_expression"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "const_value"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "list"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "curly_list"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "group"
-              }
-            ]
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "pair_tail"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "pair_tail": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "identifier"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "path"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "binary_expression"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "unary_expression"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "const_value"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "list"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "curly_list"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "group"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "identifier"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "path"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "binary_expression"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "unary_expression"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "const_value"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "list"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "curly_list"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "group"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "pair_tail"
+            }
+          ]
         }
       ]
     },

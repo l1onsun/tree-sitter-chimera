@@ -11,22 +11,23 @@ Map
 ---
 
 (source_file
-  (binary_expression
+  (pair_tail
     (binary_expression
-      (unary_expression
-        (identifier))
-      (identifier))
-    (curly_list
       (binary_expression
-        (identifier)
+        (unary_expression
+          (identifier))
+        (identifier))
+      (curly_list
         (binary_expression
           (identifier)
-          (identifier)))
-      (binary_expression
-        (identifier)
-        (const_value
-          (const_number)))
-      (binary_expression
-        (identifier)
-        (const_value
-          (const_number))))))
+          (binary_expression
+            (identifier)
+            (identifier)))
+        (binary_expression
+          (identifier)
+          (const_value
+            (const_number)))
+        (binary_expression
+          (identifier)
+          (const_value
+            (const_number)))))))
