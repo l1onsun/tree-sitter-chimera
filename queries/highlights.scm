@@ -13,27 +13,27 @@
 (paragrapth) @string
 (cat_string) @string
 
-; 3. Unary оператор % (вместе с child) как `variable.parameter`
+; 3. Unary оператор @ (вместе с child) как `variable.parameter`
 ; Сначала матчим сам узел, если он начинается с "%"
-(unary_expression
-  . "%" 
-  . (_) @variable.parameter) @variable.parameter
-
 (unary_expression
   . "@" 
   . (_) @variable.parameter) @variable.parameter
 
+; (unary_expression
+;   . "@" 
+;   . (_) @variable.parameter) @variable.parameter
+
 ; 4. Остальные операторы
-; Список операторов исключает "=", так как он выделен выше, и "%", который выделен как parameter.
+; Список операторов исключает "=", так как он выделен выше.
 ; Операторы binary_expression
 [
   ">>" "<<" "|>" "<|" "::" ".." ">=" "<=" "=="
   "+" "-" "*" "/"
-  ":" "|"
+  ":" "|" "%"
   "."
 ] @operator
 
-; Операторы unary_expression (кроме %)
+; Операторы unary_expression
 [
   "$" "&" "`"
 ] @operator

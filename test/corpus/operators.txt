@@ -2,7 +2,7 @@
 Operators
 ==================
 
-plus2 = %0 + 2
+plus2 = @_%0 + 2
 result = plus2.10 + plus2.20
 result2 = 10 |plus2 + 20 |plus2
 ---
@@ -12,7 +12,9 @@ result2 = 10 |plus2 + 20 |plus2
     (binary_expression
       (identifier)
       (binary_expression
-        (unary_expression
+        (binary_expression
+          (unary_expression
+            (identifier))
           (const_value
             (const_number)))
         (const_value

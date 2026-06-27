@@ -46,7 +46,7 @@ module.exports = grammar({
 
     binary_expression: ($) =>
       choice(
-        prec.left(0, seq(any_expression($), "=", any_expression($))),
+        prec.left(0, seq(any_expression($), choice("~", "=", ":=", "--"), any_expression($))),
         // prec.left(2, seq(any_expression($), ":", any_expression($))),
         prec.left(
           1,
@@ -64,12 +64,12 @@ module.exports = grammar({
           3,
           seq(any_expression($), choice("*", "/"), any_expression($)),
         ),
-        prec.left(4, seq(any_expression($), choice(":", "|"), any_expression($))),
+        prec.left(4, seq(any_expression($), choice(":", "|", "%"), any_expression($))),
         prec.left(5, seq(any_expression($), ".", any_expression($))),
       ),
 
     unary_expression: ($) =>
-      prec.left(6, seq(choice("@", "$", "&", "`", "%"), any_expression($))),
+      prec.left(6, seq(choice("@", "$", "&", "`"), any_expression($))),
 
     const_value: ($) =>
       choice($.const_string, $.const_number, $.paragrapth, $.cat_string),
