@@ -94,39 +94,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "curly_list",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "pair",
           "named": true
         }
       ]
@@ -141,7 +113,7 @@
       "required": false,
       "types": [
         {
-          "type": "pair_tail",
+          "type": "pair",
           "named": true
         }
       ]
@@ -152,46 +124,18 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "binary_expression",
-          "named": true
-        },
-        {
-          "type": "const_value",
-          "named": true
-        },
-        {
-          "type": "curly_list",
-          "named": true
-        },
-        {
-          "type": "group",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "list",
-          "named": true
-        },
-        {
-          "type": "path",
-          "named": true
-        },
-        {
-          "type": "unary_expression",
+          "type": "pair",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "pair_tail",
+    "type": "pair",
     "named": true,
     "fields": {},
     "children": {
@@ -223,7 +167,7 @@
           "named": true
         },
         {
-          "type": "pair_tail",
+          "type": "pair",
           "named": true
         },
         {
@@ -266,7 +210,7 @@
       "required": false,
       "types": [
         {
-          "type": "pair_tail",
+          "type": "pair",
           "named": true
         }
       ]

@@ -10,7 +10,7 @@ _^
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (binary_expression
       (identifier)
       (const_value

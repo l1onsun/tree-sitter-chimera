@@ -23,15 +23,16 @@ module.exports = grammar({
   name: "chimera",
 
   rules: {
-    source_file: ($) => optional($.pair_tail),
+    source_file: ($) => optional($.pair),
 
-    list: ($) => seq("[", repeat(any_expression($)), "]"),
-    curly_list: ($) => seq("{", repeat(any_expression($)), "}"),
-    group: ($) => seq("(", optional($.pair_tail), ")"),
-    pair_tail: ($) => choice(
-      any_expression($),                          // base: (a b)
-      seq(any_expression($), $.pair_tail),        // recursive: (a b c) = pair(a, pair(b, c))
-    ),
+    pair: ($) =>
+      choice(
+        any_expression($), // base: (a b)
+        seq(any_expression($), $.pair), // recursive: (a b c) = pair(a, pair(b, c))
+      ),
+    list: ($) => seq("[", optional($.pair), "]"),
+    curly_list: ($) => seq("{", optional($.pair), "}"),
+    group: ($) => seq("(", optional($.pair), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
     path: ($) =>
@@ -46,13 +47,36 @@ module.exports = grammar({
 
     binary_expression: ($) =>
       choice(
-        prec.left(0, seq(any_expression($), choice("~", "=", ":=", "--"), any_expression($))),
+        prec.left(
+          0,
+          seq(
+            any_expression($),
+            choice("~", "=", ":=", "--"),
+            any_expression($),
+          ),
+        ),
         // prec.left(2, seq(any_expression($), ":", any_expression($))),
         prec.left(
           1,
           seq(
             any_expression($),
-            choice(">>", "<<", "|>", "<|", "::", "..", ">=", "<=", "==", "?>", "<?", "<?>", "->", "<-", "<->"),
+            choice(
+              ">>",
+              "<<",
+              "|>",
+              "<|",
+              "::",
+              "..",
+              ">=",
+              "<=",
+              "==",
+              "?>",
+              "<?",
+              "<?>",
+              "->",
+              "<-",
+              "<->",
+            ),
             any_expression($),
           ),
         ),
@@ -64,7 +88,10 @@ module.exports = grammar({
           3,
           seq(any_expression($), choice("*", "/"), any_expression($)),
         ),
-        prec.left(4, seq(any_expression($), choice(":", "|", "%"), any_expression($))),
+        prec.left(
+          4,
+          seq(any_expression($), choice(":", "|", "%"), any_expression($)),
+        ),
         prec.left(5, seq(any_expression($), ".", any_expression($))),
       ),
 

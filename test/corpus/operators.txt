@@ -8,7 +8,7 @@ result2 = 10 |plus2 + 20 |plus2
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (binary_expression
       (identifier)
       (binary_expression
@@ -19,7 +19,7 @@ result2 = 10 |plus2 + 20 |plus2
             (const_number)))
         (const_value
           (const_number))))
-    (pair_tail
+    (pair
       (binary_expression
         (identifier)
         (binary_expression
@@ -31,7 +31,7 @@ result2 = 10 |plus2 + 20 |plus2
             (identifier)
             (const_value
               (const_number)))))
-      (pair_tail
+      (pair
         (binary_expression
           (identifier)
           (binary_expression

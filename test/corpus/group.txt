@@ -7,9 +7,9 @@ Group - single element
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (group
-      (pair_tail
+      (pair
         (identifier)))))
 
 ==================
@@ -21,11 +21,11 @@ Group - pair
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (group
-      (pair_tail
+      (pair
         (identifier)
-        (pair_tail
+        (pair
           (identifier))))))
 
 ==================
@@ -37,13 +37,13 @@ Group - recursive triple
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (group
-      (pair_tail
+      (pair
         (identifier)
-        (pair_tail
+        (pair
           (identifier)
-          (pair_tail
+          (pair
             (identifier)))))))
 
 ==================
@@ -55,15 +55,15 @@ Group - recursive quadruple
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (group
-      (pair_tail
+      (pair
         (identifier)
-        (pair_tail
+        (pair
           (identifier)
-          (pair_tail
+          (pair
             (identifier)
-            (pair_tail
+            (pair
               (identifier))))))))
 
 ==================
@@ -75,15 +75,15 @@ Group - nested groups
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (group
-      (pair_tail
+      (pair
         (identifier)
-        (pair_tail
+        (pair
           (group
-            (pair_tail
+            (pair
               (identifier)
-              (pair_tail
+              (pair
                 (identifier))))
-          (pair_tail
+          (pair
             (identifier)))))))

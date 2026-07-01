@@ -6,11 +6,14 @@ List
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (list
-      (const_value
-        (const_number))
-      (const_value
-        (const_number))
-      (const_value
-        (const_number)))))
+      (pair
+        (const_value
+          (const_number))
+        (pair
+          (const_value
+            (const_number))
+          (pair
+            (const_value
+              (const_number))))))))

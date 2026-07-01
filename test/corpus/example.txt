@@ -17,57 +17,63 @@ Example
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (binary_expression
       (binary_expression
         (unary_expression
           (identifier))
         (identifier))
       (curly_list
-        (binary_expression
-          (identifier)
+        (pair
           (binary_expression
             (identifier)
-            (curly_list
-              (binary_expression
-                (const_value
-                  (const_string))
-                (binary_expression
+            (binary_expression
+              (identifier)
+              (curly_list
+                (pair
                   (binary_expression
-                    (unary_expression
-                      (identifier))
-                    (identifier))
-                  (curly_list
+                    (const_value
+                      (const_string))
                     (binary_expression
                       (binary_expression
-                        (group
-                          (pair_tail
-                            (binary_expression
-                              (identifier)
-                              (unary_expression
-                                (identifier)))))
+                        (unary_expression
+                          (identifier))
                         (identifier))
-                      (const_value
-                        (const_string)))
-                    (binary_expression
-                      (binary_expression
-                        (group
-                          (pair_tail
-                            (binary_expression
-                              (identifier)
-                              (unary_expression
-                                (identifier)))))
-                        (identifier))
-                      (const_value
-                        (const_string)))
-                    (binary_expression
-                      (unary_expression
-                        (identifier))
-                      (binary_expression
-                        (identifier)
-                        (curly_list
+                      (curly_list
+                        (pair
                           (binary_expression
+                            (binary_expression
+                              (group
+                                (pair
+                                  (binary_expression
+                                    (identifier)
+                                    (unary_expression
+                                      (identifier)))))
+                              (identifier))
                             (const_value
-                              (const_string))
-                            (unary_expression
-                              (identifier))))))))))))))))
+                              (const_string)))
+                          (pair
+                            (binary_expression
+                              (binary_expression
+                                (group
+                                  (pair
+                                    (binary_expression
+                                      (identifier)
+                                      (unary_expression
+                                        (identifier)))))
+                                (identifier))
+                              (const_value
+                                (const_string)))
+                            (pair
+                              (binary_expression
+                                (unary_expression
+                                  (identifier))
+                                (binary_expression
+                                  (identifier)
+                                  (curly_list
+                                    (pair
+                                      (binary_expression
+                                        (const_value
+                                          (const_string))
+                                        (unary_expression
+                                          (identifier))))))))))))))))))))))

@@ -7,11 +7,11 @@ ident./path
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (identifier)
-    (pair_tail
+    (pair
       (path)
-      (pair_tail
+      (pair
         (identifier)
-        (pair_tail
+        (pair
           (path))))))

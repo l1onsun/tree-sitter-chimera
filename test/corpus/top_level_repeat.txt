@@ -8,18 +8,18 @@ b = 15
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (binary_expression
       (identifier)
       (binary_expression
         (identifier)
         (identifier)))
-    (pair_tail
+    (pair
       (binary_expression
         (identifier)
         (const_value
           (const_number)))
-      (pair_tail
+      (pair
         (binary_expression
           (identifier)
           (const_value

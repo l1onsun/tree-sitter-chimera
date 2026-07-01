@@ -7,7 +7,7 @@ Plus Operator
 ---
 
 (source_file
-  (pair_tail
+  (pair
     (binary_expression
       (binary_expression
         (const_value
