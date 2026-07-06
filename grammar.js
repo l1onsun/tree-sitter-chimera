@@ -51,7 +51,7 @@ module.exports = grammar({
           0,
           seq(
             any_expression($),
-            choice("~", "=", ":=", "--"),
+            choice("=", ".=", ":=", "~", "--"),
             any_expression($),
           ),
         ),
