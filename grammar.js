@@ -96,7 +96,7 @@ module.exports = grammar({
       ),
 
     unary_expression: ($) =>
-      prec.left(6, seq(choice("@", "$", "&", "`"), any_expression($))),
+      prec.left(6, seq(choice("@", "$", "&", "`", "!"), any_expression($))),
 
     const_value: ($) =>
       choice($.const_string, $.const_number, $.paragrapth, $.cat_string),
