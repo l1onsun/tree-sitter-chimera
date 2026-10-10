@@ -13,15 +13,11 @@
 (paragrapth) @string
 (cat_string) @string
 
-; 3. Unary оператор @ (вместе с child) как `variable.parameter`
-; Сначала матчим сам узел, если он начинается с "%"
-(unary_expression
-  . "@" 
+; 3. Prefix оператор @ (вместе с child) как `variable.parameter`
+; Сначала матчим сам узел, если он начинается с "@"
+(prefix_expression
+  . "@"
   . (_) @variable.parameter) @variable.parameter
-
-; (unary_expression
-;   . "@" 
-;   . (_) @variable.parameter) @variable.parameter
 
 ; 4. Остальные операторы
 ; Список операторов исключает "=", так как он выделен выше.
@@ -33,10 +29,18 @@
   "."
 ] @operator
 
-; Операторы unary_expression
+; Операторы prefix_expression
 [
-  "$" "&" "`"
+  "$" "&"
 ] @operator
+
+; Операторы postfix_expression
+(postfix_expression
+  "!") @operator
+
+; Backtick литерала дерева `{...}
+(tree
+  "`") @punctuation.special
 
 ; 5. Комменты
 (comment) @comment

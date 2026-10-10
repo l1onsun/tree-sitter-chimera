@@ -1,0 +1,44 @@
+==================
+Tree Call
+==================
+
+f {a b}
+f{a}
+g! {c}
+h{c}!
+k + m {c}
+
+---
+
+(source_file
+  (pair
+    (tree_call
+      (identifier)
+      (pair
+        (identifier)
+        (pair
+          (identifier))))
+    (pair
+      (tree_call
+        (identifier)
+        (pair
+          (identifier)))
+      (pair
+        (tree_call
+          (postfix_expression
+            (identifier))
+          (pair
+            (identifier)))
+        (pair
+          (postfix_expression
+            (tree_call
+              (identifier)
+              (pair
+                (identifier))))
+          (pair
+            (binary_expression
+              (identifier)
+              (tree_call
+                (identifier)
+                (pair
+                  (identifier))))))))))

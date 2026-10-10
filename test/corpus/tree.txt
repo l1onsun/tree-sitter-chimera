@@ -1,0 +1,22 @@
+==================
+Tree Literal
+==================
+
+empty = `{}
+t = `{a b}
+
+---
+
+(source_file
+  (pair
+    (binary_expression
+      (identifier)
+      (tree))
+    (pair
+      (binary_expression
+        (identifier)
+        (tree
+          (pair
+            (identifier)
+            (pair
+              (identifier))))))))

@@ -2,12 +2,12 @@
 Example
 ==================
 
-@ctx.map. {
-  engine = JsonRpcEngine. {
-    "hello" = @ctx.eff. {
+@ctx.map {
+  engine = JsonRpcEngine {
+    "hello" = @ctx.eff {
       (Stream::$stdout).writeln. "Hello World!"
       (Stream::$stdout).writeln. "Really hello!"
-      @return: json. {
+      @return: json {
         "ok" = @true
       }
     }
@@ -18,62 +18,58 @@ Example
 
 (source_file
   (pair
-    (binary_expression
+    (tree_call
       (binary_expression
-        (unary_expression
+        (prefix_expression
           (identifier))
         (identifier))
-      (curly_list
-        (pair
-          (binary_expression
+      (pair
+        (binary_expression
+          (identifier)
+          (tree_call
             (identifier)
-            (binary_expression
-              (identifier)
-              (curly_list
-                (pair
+            (pair
+              (binary_expression
+                (const_value
+                  (const_string))
+                (tree_call
                   (binary_expression
-                    (const_value
-                      (const_string))
+                    (prefix_expression
+                      (identifier))
+                    (identifier))
+                  (pair
                     (binary_expression
                       (binary_expression
-                        (unary_expression
-                          (identifier))
-                        (identifier))
-                      (curly_list
-                        (pair
-                          (binary_expression
-                            (binary_expression
-                              (group
-                                (pair
-                                  (binary_expression
-                                    (identifier)
-                                    (unary_expression
-                                      (identifier)))))
-                              (identifier))
-                            (const_value
-                              (const_string)))
+                        (group
                           (pair
                             (binary_expression
-                              (binary_expression
-                                (group
-                                  (pair
-                                    (binary_expression
-                                      (identifier)
-                                      (unary_expression
-                                        (identifier)))))
-                                (identifier))
-                              (const_value
-                                (const_string)))
+                              (identifier)
+                              (prefix_expression
+                                (identifier)))))
+                        (identifier))
+                      (const_value
+                        (const_string)))
+                    (pair
+                      (binary_expression
+                        (binary_expression
+                          (group
                             (pair
                               (binary_expression
-                                (unary_expression
-                                  (identifier))
-                                (binary_expression
-                                  (identifier)
-                                  (curly_list
-                                    (pair
-                                      (binary_expression
-                                        (const_value
-                                          (const_string))
-                                        (unary_expression
-                                          (identifier))))))))))))))))))))))
+                                (identifier)
+                                (prefix_expression
+                                  (identifier)))))
+                          (identifier))
+                        (const_value
+                          (const_string)))
+                      (pair
+                        (binary_expression
+                          (prefix_expression
+                            (identifier))
+                          (tree_call
+                            (identifier)
+                            (pair
+                              (binary_expression
+                                (const_value
+                                  (const_string))
+                                (prefix_expression
+                                  (identifier))))))))))))))))))

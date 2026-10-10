@@ -2,7 +2,7 @@
 Map
 ==================
 
-@ctx.map. {
+@ctx.map {
   main = one + two
   one = 1
   two = 2
@@ -12,25 +12,24 @@ Map
 
 (source_file
   (pair
-    (binary_expression
+    (tree_call
       (binary_expression
-        (unary_expression
+        (prefix_expression
           (identifier))
         (identifier))
-      (curly_list
+      (pair
+        (binary_expression
+          (identifier)
+          (binary_expression
+            (identifier)
+            (identifier)))
         (pair
           (binary_expression
             (identifier)
-            (binary_expression
-              (identifier)
-              (identifier)))
+            (const_value
+              (const_number)))
           (pair
             (binary_expression
               (identifier)
               (const_value
-                (const_number)))
-            (pair
-              (binary_expression
-                (identifier)
-                (const_value
-                  (const_number))))))))))
+                (const_number)))))))))

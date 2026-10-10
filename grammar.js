@@ -12,12 +12,17 @@ const any_expression = ($) =>
     $.identifier,
     $.path,
     $.binary_expression,
-    $.unary_expression,
+    $.prefix_expression,
+    $.postfix_expression,
     $.const_value,
     $.list,
-    $.curly_list,
+    $.tree,
+    $.tree_call,
     $.group,
   );
+
+// `{...} body: braces with optional content
+const tree_body = ($) => seq("{", optional($.pair), "}");
 
 module.exports = grammar({
   name: "chimera",
@@ -31,7 +36,6 @@ module.exports = grammar({
         seq(any_expression($), $.pair), // recursive: (a b c) = pair(a, pair(b, c))
       ),
     list: ($) => seq("[", optional($.pair), "]"),
-    curly_list: ($) => seq("{", optional($.pair), "}"),
     group: ($) => seq("(", optional($.pair), ")"),
 
     identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
@@ -44,6 +48,11 @@ module.exports = grammar({
           /\.\/[^\s\]\)\}\,;"]+(?:\/[^\s\]\)\}\,;"]+)*/,
         ),
       ),
+
+    // tree literal: `{...} (backtick is only used here)
+    tree: ($) => seq("`", tree_body($)),
+    // macro call: <expr>{...} (whitespace is allowed before the braces)
+    tree_call: ($) => prec.left(5, seq(any_expression($), tree_body($))),
 
     binary_expression: ($) =>
       choice(
@@ -95,8 +104,9 @@ module.exports = grammar({
         prec.left(5, seq(any_expression($), ".", any_expression($))),
       ),
 
-    unary_expression: ($) =>
-      prec.left(6, seq(choice("@", "$", "&", "`", "!"), any_expression($))),
+    prefix_expression: ($) =>
+      prec.left(6, seq(choice("@", "$", "&"), any_expression($))),
+    postfix_expression: ($) => prec.left(5, seq(any_expression($), "!")),
 
     const_value: ($) =>
       choice($.const_string, $.const_number, $.paragrapth, $.cat_string),

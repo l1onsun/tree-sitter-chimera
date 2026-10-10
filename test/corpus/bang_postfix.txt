@@ -1,0 +1,45 @@
+==================
+Bang Postfix
+==================
+
+x = make_point!
+y = a.b!
+z = a!!
+w = a + b!
+u = a! b
+
+---
+
+(source_file
+  (pair
+    (binary_expression
+      (identifier)
+      (postfix_expression
+        (identifier)))
+    (pair
+      (binary_expression
+        (identifier)
+        (postfix_expression
+          (binary_expression
+            (identifier)
+            (identifier))))
+      (pair
+        (binary_expression
+          (identifier)
+          (postfix_expression
+            (postfix_expression
+              (identifier))))
+        (pair
+          (binary_expression
+            (identifier)
+            (binary_expression
+              (identifier)
+              (postfix_expression
+                (identifier))))
+          (pair
+            (binary_expression
+              (identifier)
+              (postfix_expression
+                (identifier)))
+            (pair
+              (identifier))))))))
